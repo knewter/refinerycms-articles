@@ -1,31 +1,20 @@
+<% content_for :title do %>
+  <%= @article.title %>
+<% end %>
+
 <% content_for :body_content_title do %>
   <%= @article.title %>
 <% end %>
 
 <% content_for :body_content_left do %>
   <section>
-    <h1>Title</h1>
     <p>
-      <%=raw @article.title %>
+      <%= @article.date.to_s(:long_ordinal) %>
     </p>
   </section>
   <section>
-    <h1>Date</h1>
-    <p>
-      <%=raw @article.date %>
-    </p>
-  </section>
-  <section>
-    <h1>Photo</h1>
-    <p>
       <%= image_fu @article.photo, nil %>
-    </p>
-  </section>
-  <section>
-    <h1>Contents</h1>
-    <p>
       <%=raw @article.contents %>
-    </p>
   </section>
 <% end %>
 

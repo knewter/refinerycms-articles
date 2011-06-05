@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="articles">
+    <% @articles.each do |article| %>
+      <li>
+        <%= link_to article.title, main_app.refinery_article_path(article) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/refinery/content_page" %>

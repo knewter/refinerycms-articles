@@ -1,0 +1,28 @@
+<ul>
+  <% if ::Refinery::Admin::ArticlesController.searchable? %>
+    <li>
+      <%= render :partial => "/refinery/admin/search",
+                  :locals => {
+                    :url => main_app.refinery_admin_articles_path
+                  } %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), main_app.new_refinery_admin_article_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? and ::Refinery::Admin::ArticlesController.sortable? and ::Refinery::Article.count > 1 %>
+  <li>
+    <%= link_to t('.reorder', :what => "Articles"),
+                 main_app.refinery_admin_articles_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Articles"),
+                 main_app.refinery_admin_articles_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

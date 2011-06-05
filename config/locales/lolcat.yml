@@ -1,0 +1,26 @@
+lolcat:
+  refinery:
+    shared:
+      admin:
+        image_picker:
+          image: IMAGE
+    plugins:
+      articles:
+        title: Articles
+    admin:
+      articles:
+        actions:
+          create_new: CREATE NEW Article
+          reorder: REORDR Articles
+          reorder_done: DUN REORDERIN Articles
+        records:
+          title: Articles
+          sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+          no_items_yet: THAR R NO Articles YET. CLICK "CREATE NEW Article" 2 ADD UR FURST article.
+        article:
+          view_live_html: VIEW DIS article LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+          edit: EDIT DIS article
+          delete: REMOOV DIS article FOREVR
+    articles:
+      show:
+        other: OTHR Articles

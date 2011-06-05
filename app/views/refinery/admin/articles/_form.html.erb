@@ -1,0 +1,61 @@
+<% url_opts = action_name == 'edit' ? {:url => main_app.refinery_admin_article_path(@article.id), :as => :article} : {:url => main_app.refinery_admin_articles_path, :as => :article} %>
+<%= form_for [:admin, @article], url_opts do |f| -%>
+  <%= render :partial => "/refinery/admin/error_messages", :locals => {
+          :object => @article,
+          :include_object_name => true
+        } %>
+  
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest'  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :date -%>
+    <%= f.datetime_select :date  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :photo -%>
+    <%= render :partial => "/refinery/admin/image_picker", :locals => {
+          :f => f,
+          :field => :photo_id,
+          :image => @article.photo,
+          :toggle_image_display => false
+        } %>
+  
+  <div class='field'>
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <% [:contents].each_with_index do |part, part_index| %>
+          <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+            <%= link_to part.to_s.titleize, "##{part}" %>
+          </li>
+        <% end %>
+      </ul>
+
+      <div id='page_part_editors'>
+        <% [:contents].each do |part| %>
+          <div class='page_part' id='<%= part %>'>
+            <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+  <%= render :partial => "/refinery/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('delete', :scope => 'refinery.admin.articles.article'),
+                :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @article.title)
+              } %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>

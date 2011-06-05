@@ -1,0 +1,26 @@
+en:
+  refinery:
+    shared:
+      admin:
+        image_picker:
+          image: image
+    plugins:
+      articles:
+        title: Articles
+    admin:
+      articles:
+        actions:
+          create_new: Add New Article
+          reorder: Reorder Articles
+          reorder_done: Done Reordering Articles
+        records:
+          title: Articles
+          sorry_no_results: Sorry! There are no results found.
+          no_items_yet: There are no Articles yet. Click "Add New Article" to add your first article.
+        article:
+          view_live_html: View this article live <br/><em>(opens in a new window)</em>
+          edit: Edit this article
+          delete: Remove this article forever
+    articles:
+      show:
+        other: Other Articles

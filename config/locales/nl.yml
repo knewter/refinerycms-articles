@@ -1,0 +1,22 @@
+nl:
+  refinery:
+    plugins:
+      articles:
+        title: Articles
+    admin:
+      articles:
+        actions:
+          create_new: Maak een nieuwe Article
+          reorder: Wijzig de volgorde van de Articles
+          reorder_done: Klaar met het wijzingen van de volgorde van de Articles
+        records:
+          title: Articles
+          sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+          no_items_yet: Er zijn nog geen Articles. Druk op 'Maak een nieuwe Article' om de eerste aan te maken.
+        article:
+          view_live_html: Bekijk deze article op de website <br/><em>(opent een nieuw venster)</em>
+          edit: Bewerk deze article
+          delete: Verwijder deze article voor eeuwig
+    articles:
+      show:
+        other: Andere Articles

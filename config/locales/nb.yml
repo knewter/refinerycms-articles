@@ -1,0 +1,22 @@
+nb:
+  refinery:
+    plugins:
+      articles:
+        title: Articles
+    admin:
+      articles:
+        actions:
+          create_new: Lag en ny Article
+          reorder: Endre rekkefølgen på Articles
+          reorder_done: Ferdig å endre rekkefølgen Articles
+        records:
+          title: Articles
+          sorry_no_results: Beklager! Vi fant ikke noen resultater.
+          no_items_yet: Det er ingen Articles enda. Klikk på "Lag en ny Article" for å legge til din første article.
+        article:
+          view_live_html: Vis hvordan denne article ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+          edit: Rediger denne article
+          delete: Fjern denne article permanent
+    articles:
+      show:
+        other: Andre Articles
